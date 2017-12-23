@@ -24,7 +24,7 @@ public class AlphabetActivity extends FragmentActivity implements
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_ACTION_BAR);
         setContentView(R.layout.activity_alphabet);
-        viewPager = (ViewPager) findViewById(R.id.pager);
+        viewPager =  findViewById(R.id.pager);
         actionBar = getActionBar();
         mAdapter = new TabsPagerAdapter(getSupportFragmentManager());
 

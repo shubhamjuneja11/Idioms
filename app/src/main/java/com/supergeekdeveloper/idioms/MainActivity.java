@@ -11,10 +11,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ActionBar a=getActionBar();
-        if(a==null)
-            Log.e("abc","dfdf00");
-        else Log.e("fdf0","fddf");
+
 
     }
 }
