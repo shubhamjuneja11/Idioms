@@ -31,33 +31,15 @@ public class AlphabetActivity extends FragmentActivity implements
         viewPager.setAdapter(mAdapter);
         actionBar.setHomeButtonEnabled(false);
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
-        ActionBar.TabListener tabListener = new ActionBar.TabListener() {
-            public void onTabSelected(ActionBar.Tab tab, FragmentTransaction ft) {
-                // show the given tab
-            }
-
-            public void onTabUnselected(ActionBar.Tab tab, FragmentTransaction ft) {
-                // hide the given tab
-            }
-
-            public void onTabReselected(ActionBar.Tab tab, FragmentTransaction ft) {
-                // probably ignore this event
-            }
-        };
-
         for (int i = 0; i < 26; i++) {
             char ch=(char)(65+i);
             String s=ch+"";
-            actionBar.addTab(
-                    actionBar.newTab()
-                            .setText(s)
-                            .setTabListener(tabListener));
+            actionBar.addTab(actionBar.newTab().setText(s).setTabListener(tabListener));
 
         }
 
     }
-
-
+    
     @Override
     public void onTabSelected(ActionBar.Tab tab, FragmentTransaction fragmentTransaction) {
 
