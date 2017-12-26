@@ -11,13 +11,18 @@ import com.supergeekdeveloper.idioms.AlphabetFragment;
  */
 
 public class TabsPagerAdapter extends FragmentPagerAdapter {
+    AlphabetFragment alphabetFragment;
     public TabsPagerAdapter(FragmentManager fm) {
         super(fm);
+        alphabetFragment=new AlphabetFragment();
+
     }
 
     @Override
     public Fragment getItem(int position) {
-        return new AlphabetFragment();
+
+        alphabetFragment=new AlphabetFragment();
+        return alphabetFragment;
     }
 
     @Override
@@ -25,7 +30,12 @@ public class TabsPagerAdapter extends FragmentPagerAdapter {
         return 26;
     }
     @Override
+
     public CharSequence getPageTitle(int position) {
         return "OBJECT " + (position + 1);
+    }
+    public AlphabetFragment getAlphabetFragment(){
+
+        return alphabetFragment;
     }
 }
