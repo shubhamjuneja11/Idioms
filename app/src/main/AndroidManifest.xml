@@ -18,12 +18,9 @@
         </activity>
         <activity
             android:name=".AlphabetActivity"
-            android:theme="@style/Tabstheme">
-
-        </activity>
-        <activity android:name=".CategoryActivity">
-
-        </activity>
+            android:theme="@style/Tabstheme"></activity>
+        <activity android:name=".CategoryActivity"></activity>
+        <activity android:name=".DetailsActivity"></activity>
     </application>
 
 </manifest>

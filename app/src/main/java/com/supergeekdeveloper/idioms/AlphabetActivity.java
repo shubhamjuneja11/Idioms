@@ -30,7 +30,7 @@ import java.util.ArrayList;
 import java.util.Locale;
 
 public class AlphabetActivity extends FragmentActivity implements
-        ActionBar.TabListener,TextToSpeech.OnInitListener,AlphabetAdapter.MyTextoSpeech {
+        ActionBar.TabListener,TextToSpeech.OnInitListener,AlphabetAdapter.MyTextoSpeech,ClickPosition {
 
     private ActionBar actionBar;
     AlphabetAdapter adapter;
@@ -40,7 +40,7 @@ public class AlphabetActivity extends FragmentActivity implements
     JSONObject object1;
     private TextToSpeech tts;
     String c = "a";
-
+    int pos;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -183,5 +183,16 @@ public void nowloaddata(String a){
     @Override
     public void speak(String s) {
         tts.speak(s, TextToSpeech.QUEUE_FLUSH, null);
+    }
+    public void openAlpha(){
+        Intent intent=new Intent(this,DetailsActivity.class);
+        intent.putExtra("id",al.get(pos).getId());
+        startActivity(intent);
+    }
+
+    @Override
+    public void getposition(int pos) {
+        this.pos=pos;
+        openAlpha();
     }
 }
